@@ -41,6 +41,10 @@ h6, .h6 {
 
 p {
 	margin: 0 0 1em;
+
+	@include media('>=tablet') {
+		margin: 0 0 2.05em;
+	}
 }
 
 a {
