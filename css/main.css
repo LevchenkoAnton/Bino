@@ -820,10 +820,10 @@ input[type='submit'] {
     display: inline-block;
     background: #6a6a6a; }
 
-.title-left-line-decoration {
+.title-side-line-decoration {
   position: relative;
   padding-left: 34px; }
-  .title-left-line-decoration:before {
+  .title-side-line-decoration:before {
     width: 6px;
     height: 36px;
     position: absolute;
