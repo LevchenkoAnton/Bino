@@ -880,7 +880,7 @@ input[type='submit'] {
   display: inline-block;
   position: relative;
   padding-left: 34px; }
-  .title-left-line-decoration:before {
+  .title-side-line-decoration:before {
     width: 6px;
     height: 36px;
     position: absolute;
