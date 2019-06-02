@@ -72,6 +72,7 @@
 }
 
 .title-left-line-decoration {
+  display: inline-block;
   position: relative;
   padding-left: 34px;
 
@@ -103,19 +104,29 @@
   position: relative;
 
   .mask {
+    @include animate(height width);
+
     position: relative;
     overflow: hidden;
     margin: 0 auto;
   }
 
   .slideset {
-    @include animate(all);
+    @include animate(margin);
     @extend %listreset;
 
-    display: flex;
-    align-items: center;
-    width: 99999px;
+    width: 100%;
     float: left;
+    letter-spacing: -4px;
+    white-space: nowrap;
+  }
+
+  .slide {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    white-space: normal;
+    letter-spacing: 0;
   }
 
   .btn-prev,
@@ -167,7 +178,7 @@
       }
 
       &.active a {
-        background: lighten($orange, 20%);
+        background: $orange;
       }
     }
 
@@ -176,13 +187,13 @@
 
       display: block;
       font-size: 0;
-      background: $orange;
+      background: rgba($gray, .25);
     }
   }
 }
 
 .btn {
-  @include animate(all);
+  @include animate(background-color border-color);
 
   display: flex;
   align-items: center;
@@ -336,7 +347,7 @@
   }
 
   @include media('>=desktop') {
-    padding: 137px 0;
+    padding: 137px 0 147px;
   }
 
   .about-holder {
@@ -378,6 +389,163 @@
 
       @include media('>=tablet') {
         margin: 0;
+      }
+    }
+  }
+}
+
+.services-section {
+  background-color: $dark-gray;
+}
+
+.services-holder {
+  text-align: right;
+
+  @include media('>=tablet') {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  h2 {
+    margin-bottom: 38px;
+    color: $white;
+
+    @include media('>=tablet') {
+      margin-bottom: 65px;
+      margin-right: 46px;
+    }
+
+    @include media('>=desktop') {
+      margin-right: 83px;
+    }
+  }
+
+  .title-left-line-decoration {
+    padding-left: 0;
+    padding-right: 34px;
+
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .image-holder {
+    max-width: 880px;
+  }
+
+  .services-content {
+    padding: 40px 20px;
+
+    @include media('>=tablet') {
+      width: 54%;
+      padding: 0;
+    }
+  }
+
+  .services-carousel {
+    @include media('>=tablet') {
+      right: -30px;
+    }
+
+    @include media('>=desktop') {
+      right: -35px;
+    }
+  }
+}
+
+.services-carousel {
+
+  .slide {
+    position: relative;
+    display: block;
+    float: right;
+    max-width: 800px;
+    padding-left: 20px;
+
+    @include media('>=tablet') {
+      padding-right: 80px;
+    }
+
+    @include media('>=desktop') {
+      padding-right: 117px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 6px;
+    color: $orange;
+    font-weight: 500;
+    font-family: $font-open-sans;
+  }
+
+  .text-holder {
+    line-height: 1.85;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .ico-holder {
+    @include size(60px);
+
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 0;
+    padding: 5px;
+    transform: translate(0, -50%);
+    background: rgba($white, .25);
+    border-radius: 50%;
+
+    @include media('>=tablet') {
+      display: block;
+    }
+
+    @include media('>=desktop') {
+      @include size(73px);
+    }
+
+    i{
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      border-radius: 50%;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        background: $white;
+      }
+    }
+  }
+
+  .pagination {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+
+    ul {
+      flex-direction: column;
+    }
+
+    li {
+      margin-right: 0;
+      margin-bottom: 11px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        @include size(2px, 34px);
       }
     }
   }

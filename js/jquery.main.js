@@ -8,6 +8,11 @@ const headerNav = new Modal('.header-nav',
 // init carousel
 const carousel = new Carousel({
     carouselClass: '.carousel',
-    generatePagination: false,
     autoRotation: false
+});
+
+const servicesCarousel = new Carousel({
+    carouselClass: '.services-carousel',
+    generatePagination: true,
+    vertical: true
 });

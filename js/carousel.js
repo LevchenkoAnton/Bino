@@ -12,6 +12,9 @@ class Carousel {
         this.pagerList = document.createElement('ul');
         this.pagination = this.carousel.querySelector('.pagination');
         this.pagerLinks = this.pagination.getElementsByTagName('a');
+        this.vertical = this.option.vertical;
+        this.fullSizeFunction = this.vertical ? 'offsetHeight' : 'offsetWidth';
+        this.wayOfTransition = this.vertical ? 'marginTop' : 'marginLeft';
         this.currentStep = 0;
         this.stepsCount = 0;
         this.step = 1;
@@ -26,20 +29,21 @@ class Carousel {
     }
 
     init() {
-        this.attachEvents();
         this.calculateOffsets();
-        this.paginationEvent();
-        this.switchSlide();
 
         if (this.isGeneratePagination) {
             this.generatePagination();
         }
+
+        this.switchSlide();
+        this.paginationEvent();
+        this.attachEvents();
+        this.calculateHeight();
     }
 
     attachEvents() {
         let self = this;
 
-        window.addEventListener('load', self.onWindowResize.bind(self));
         window.addEventListener('resize', self.onWindowResize.bind(self));
         window.addEventListener('orientationchange', self.onWindowResize.bind(self));
 
@@ -68,7 +72,7 @@ class Carousel {
             this.mask.addEventListener('touchmove', (e) => {
                 self.moveWidth = self.startTouch - e.touches[0].clientX;
                 self.touchmove = self.tmpOffset - self.moveWidth;
-                self.slideset.style.marginLeft = self.touchmove + 'px';
+                self.slideset.style[this.wayOfTransition] = self.touchmove + 'px';
 
                 self.stopRotation();
 
@@ -80,7 +84,7 @@ class Carousel {
                 } else if (Math.abs(self.touchmove) > self.minTouchWidth && self.moveWidth < 0) {
                     self.prevSlide();
                 } else {
-                    self.slideset.style.marginLeft = self.tmpOffset;
+                    self.slideset.style[this.wayOfTransition] = self.tmpOffset;
                     self.autoRotation();
                 }
             });
@@ -89,6 +93,7 @@ class Carousel {
 
     onWindowResize() {
         this.calculateOffsets();
+        this.calculateHeight();
         this.refreshState();
     }
 
@@ -100,6 +105,12 @@ class Carousel {
         });
 
         this.stepsCount = this.slides.length;
+    }
+
+    calculateHeight() {
+        if (this.vertical) {
+            this.mask.style.height = this.slideset.querySelector('.active')[this.fullSizeFunction] + 'px';
+        }
     }
 
     prevSlide() {
@@ -126,21 +137,28 @@ class Carousel {
         this.refreshState();
 
         this.addActiveClass(this.slides);
-        this.addActiveClass(this.pagerList.children);
+        this.addActiveClass(this.pagination.getElementsByTagName('li'));
         this.autoRotation();
+
+        if (this.vertical) {
+            this.calculateHeight();
+        }
     }
 
     refreshState() {
-        if (this.currentStep < this.slides.length) {
-            this.tmpOffset = -this.maskWidth * this.currentStep
-        } else {
-            this.tmpOffset = 0
+        this.tmpOffset = 0;
+
+        if (this.currentStep && this.tmpOffset != this.slideset[this.fullSizeFunction]) {
+            for (let i = 0; i < this.currentStep; i++) {
+                this.tmpOffset -= this.slides[i][this.fullSizeFunction]
+            }
         }
 
-        this.slideset.style.marginLeft = this.tmpOffset +'px';
+        this.slideset.style[this.wayOfTransition] = this.tmpOffset +'px';
     }
 
     generatePagination() {
+
         for (let i = 0; i < this.stepsCount; i++) {
             this.pagerListItem = document.createElement('li');
             this.pagerListlink = document.createElement('a');
@@ -169,6 +187,7 @@ class Carousel {
     }
 
     addActiveClass(items) {
+
         [].forEach.call(items, item => {
             if (item.classList.contains('active')) {
                 item.classList.remove('active');
