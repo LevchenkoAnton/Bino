@@ -7,11 +7,7 @@
 	<title>Bino</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Open+Sans:400,400i,600,600i,700,700i|Source+Sans+Pro:400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
 	<link media="all" rel="stylesheet" href="css/main.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
-	<script src="js/modal.js" defer></script>
-	<script src="js/carousel.js" defer></script>
-	<script src="js/jquery.main.js" defer></script>
+	<script src="js/app.js" defer></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -118,10 +114,10 @@
 						</ul>
 					</div>
 					<a href="#" class="btn-prev">
-						<img src="images/ico-angle-left.svg" alt="">
+						<i class="icon-angle-left"></i>
 					</a>
 					<a href="#" class="btn-next">
-						<img src="images/ico-angle-right.svg" alt="">
+						<i class="icon-angle-right"></i>
 					</a>
 					<div class="pagination">
 						<!--Generate pagination-->
@@ -135,7 +131,7 @@
                     <ul class="feature-list">
                         <li class="col">
                             <div class="img-holder">
-                                <img src="images/ico-02.svg" width="27" height="27" alt="">
+								<i class="icon-ico-02"></i>
                             </div>
                             <h4 class="title-underline-decoration">SLEEK DESIGN</h4>
                             <div class="text-holder">
@@ -144,7 +140,7 @@
                         </li>
                         <li class="col">
                             <div class="img-holder">
-                                <img src="images/ico-03.svg" width="21" height="20" alt="">
+								<i class="icon-ico-03"></i>
                             </div>
                             <h4 class="title-underline-decoration">CLEAN CODE</h4>
                             <div class="text-holder">
@@ -153,7 +149,7 @@
                         </li>
                         <li class="col">
                             <div class="img-holder">
-                                <img src="images/ico-04.svg" width="23" height="29" alt="">
+								<i class="icon-ico-04"></i>
                             </div>
                             <h4 class="title-underline-decoration">CREATIVE IDEAS</h4>
                             <div class="text-holder">
@@ -162,7 +158,7 @@
                         </li>
                         <li class="col">
                             <div class="img-holder">
-                                <img src="images/ico-05.svg" width="23" height="24" alt="">
+								<i class="icon-ico-05"></i>
                             </div>
                             <h4 class="title-underline-decoration">FREE SUPPORT</h4>
                             <div class="text-holder">
@@ -189,6 +185,53 @@
                     </div>
                 </div>
             </section>
+			<section class="services-section">
+				<div class="services-holder">
+					<div class="image-holders">
+						<img src="images/img-02.jpg" alt="Image Description">
+					</div>
+					<div class="services-content">
+						<h2 class="title-left-line-decoration">OUR SERVICES</h2>
+						<div class="carousel services-carousel">
+							<div class="mask">
+								<ul class="slideset">
+									<li class="slide">
+										<div class="slide-content">
+											<h4>WEB DESIGN</h4>
+											<div class="text-holder">
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ip sum has been the industry's standard dummy text ever.</p>
+											</div>
+										</div>
+										<div class="ico-holder"><i class="icon-ico-05"></i></div>
+									</li>
+									<li class="slide">
+										<div class="slide-content">
+											<h4>PRINT DESIGN</h4>
+											<div class="text-holder">
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+												<p>Lorem Ip sum has been the industry's standard dummy text ever.</p>
+											</div>
+										</div>
+										<div class="ico-holder"><i class="icon-ico-06"></i></div>
+									</li>
+									<li class="slide">
+										<div class="slide-content">
+											<h4>PHOTOGRAPHY</h4>
+											<div class="text-holder">
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ip sum has been the industry's standard dummy text ever.</p>
+											</div>
+										</div>
+										<div class="ico-holder"><i class="icon-ico-07"></i></div>
+									</li>
+								</ul>
+							</div>
+							<div class="pagination">
+								<!--Generate pagination-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
         </main>
 		<footer id="footer"></footer>
 	</div>
