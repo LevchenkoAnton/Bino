@@ -705,6 +705,7 @@ input[type="submit"] {
 #header {
 	position: relative;
 	padding: 20px 0 10%;
+	background-color: #202020;
 	background-size: cover;
 	background-position: center center;
 }
@@ -1532,6 +1533,7 @@ input[type="submit"] {
 	}
 
 	.carousel .btn-next {
+		left: auto;
 		right: 41px;
 	}
 

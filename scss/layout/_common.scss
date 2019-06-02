@@ -173,6 +173,7 @@
     right: 15px;
 
     @include media('>=tablet') {
+      left: auto;
       right: 41px;
     }
   }
