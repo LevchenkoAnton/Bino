@@ -517,8 +517,8 @@ input[type='submit'] {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?z1heao");
-  src: url("../fonts/icomoon.eot?z1heao#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?z1heao") format("truetype"), url("../fonts/icomoon.woff?z1heao") format("woff"), url("../fonts/icomoon.svg?z1heao#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?m4uexe");
+  src: url("../fonts/icomoon.eot?m4uexe#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?m4uexe") format("truetype"), url("../fonts/icomoon.woff?m4uexe") format("woff"), url("../fonts/icomoon.svg?m4uexe#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -559,11 +559,15 @@ input[type='submit'] {
   content: "\e906";
   color: #e74c3c; }
 
+.icon-ico-08:before {
+  content: "\e909";
+  color: #e74c3c; }
+
 .icon-angle-left:before {
-  content: "\e907"; }
+  content: "\e90a"; }
 
 .icon-angle-right:before {
-  content: "\e908";
+  content: "\e90b";
   color: #fff; }
 
 #header {
@@ -1172,8 +1176,9 @@ input[type='submit'] {
     .services-holder .title-left-line-decoration:before {
       left: auto;
       right: 0; }
-  .services-holder .image-holder {
-    max-width: 880px; }
+  @media (min-width: 768px) {
+    .services-holder .image-holder {
+      max-width: 46%; } }
   .services-holder .services-content {
     padding: 40px 20px; }
     @media (min-width: 768px) {
@@ -1244,7 +1249,8 @@ input[type='submit'] {
       -webkit-transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
-      font-size: 20px;
+      font-size: 27px;
+      color: #e74c3c;
       background: #fff; }
 
 .services-carousel .pagination {
