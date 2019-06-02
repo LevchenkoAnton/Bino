@@ -285,9 +285,15 @@
       }
 
       &:hover {
-        .img-holder:before {
-          transform: rotate(-45deg);
-          border-color: $orange;
+        .img-holder {
+          &:before {
+            transform: rotate(-45deg);
+            border-color: $orange;
+          }
+
+          i:before {
+            color: $orange;
+          }
         }
 
         h4 {
@@ -315,7 +321,7 @@
       margin-bottom: 24px;
 
       &:before {
-        @include animate(all);
+        @include animate(transform border-color);
         @include size(73px);
 
         position: absolute;
@@ -327,12 +333,14 @@
         border-radius: 3px;
       }
 
-      img {
+      i:before {
+        @include animate(color);
+
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: $orange;
+        font-size: 26px;
       }
     }
 
