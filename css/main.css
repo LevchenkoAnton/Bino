@@ -517,8 +517,8 @@ input[type='submit'] {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?z1heao");
-  src: url("../fonts/icomoon.eot?z1heao#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?z1heao") format("truetype"), url("../fonts/icomoon.woff?z1heao") format("woff"), url("../fonts/icomoon.svg?z1heao#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?m4uexe");
+  src: url("../fonts/icomoon.eot?m4uexe#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?m4uexe") format("truetype"), url("../fonts/icomoon.woff?m4uexe") format("woff"), url("../fonts/icomoon.svg?m4uexe#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -559,11 +559,15 @@ input[type='submit'] {
   content: "\e906";
   color: #e74c3c; }
 
+.icon-ico-08:before {
+  content: "\e909";
+  color: #e74c3c; }
+
 .icon-angle-left:before {
-  content: "\e907"; }
+  content: "\e90a"; }
 
 .icon-angle-right:before {
-  content: "\e908";
+  content: "\e90b";
   color: #fff; }
 
 #header {
@@ -1052,6 +1056,8 @@ input[type='submit'] {
             -ms-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         border-color: #e74c3c; }
+      .feature-section .feature-list .col:hover .img-holder i:before {
+        color: #e74c3c; }
       .feature-section .feature-list .col:hover h4 {
         color: #e74c3c; }
       @media (min-width: 480px) {
@@ -1081,14 +1087,17 @@ input[type='submit'] {
         display: block;
         border: 1px solid rgba(153, 153, 153, 0.25);
         border-radius: 3px; }
-      .feature-section .feature-list .img-holder img {
+      .feature-section .feature-list .img-holder i:before {
+        -webkit-transition: color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
         position: absolute;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
-        color: #e74c3c; }
+        color: #999;
+        font-size: 25px; }
     .feature-section .feature-list h4 {
       -webkit-transition: color 0.3s ease-in-out;
       transition: color 0.3s ease-in-out;
