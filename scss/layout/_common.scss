@@ -138,11 +138,9 @@
     top: 50%;
     left: 15px;
     transform: translate(0, -88px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: $orange;
     border-radius: 3px;
+    text-decoration: none;
 
     &:hover {
       background-color: lighten($orange, 10%);
@@ -152,6 +150,18 @@
       @include size(45px);
 
       left: 41px;
+    }
+
+    i:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 15px;
+
+      @include media('>=tablet') {
+        font-size: 20px;
+      }
     }
   }
 

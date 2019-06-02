@@ -935,17 +935,9 @@ input[type='submit'] {
     -webkit-transform: translate(0, -88px);
         -ms-transform: translate(0, -88px);
             transform: translate(0, -88px);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     background-color: #e74c3c;
-    border-radius: 3px; }
+    border-radius: 3px;
+    text-decoration: none; }
     .carousel .btn-prev:hover,
     .carousel .btn-next:hover {
       background-color: #ed7669; }
@@ -955,6 +947,19 @@ input[type='submit'] {
         width: 45px;
         height: 45px;
         left: 41px; } }
+    .carousel .btn-prev i:before,
+    .carousel .btn-next i:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      font-size: 15px; }
+      @media (min-width: 768px) {
+        .carousel .btn-prev i:before,
+        .carousel .btn-next i:before {
+          font-size: 20px; } }
   .carousel .btn-next {
     left: auto;
     right: 15px; }
