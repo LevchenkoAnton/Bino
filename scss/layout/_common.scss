@@ -138,6 +138,9 @@
     top: 50%;
     left: 15px;
     transform: translate(0, -88px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $orange;
     border-radius: 3px;
     text-decoration: none;
@@ -160,7 +163,7 @@
       font-size: 15px;
 
       @include media('>=tablet') {
-        font-size: 20px;
+        font-size: 22px;
       }
     }
   }
@@ -174,11 +177,14 @@
     }
   }
 
-  .pagination ul {
-    @extend %listreset;
+  .pagination {
 
-    display: flex;
-    justify-content: center;
+    ul {
+      @extend %listreset;
+
+      display: flex;
+      justify-content: center;
+    }
 
     li {
       margin-right: 10px;
@@ -279,15 +285,9 @@
       }
 
       &:hover {
-        .img-holder {
-          &:before {
-            transform: rotate(-45deg);
-            border-color: $orange;
-          }
-
-          i:before {
-            color: $orange;
-          }
+        .img-holder:before {
+          transform: rotate(-45deg);
+          border-color: $orange;
         }
 
         h4 {
@@ -327,18 +327,15 @@
         border-radius: 3px;
       }
 
-      i:before {
-        @include animate(color);
-
+      img {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: $gray;
-        font-size: 25px;
+        color: $orange;
       }
     }
-    
+
     h4 {
       @include animate(color);
 
@@ -451,7 +448,10 @@
   }
 
   .image-holder {
-    max-width: 880px;
+
+    @include media('>=tablet') {
+      max-width: 46%;
+    }
   }
 
   .services-content {
@@ -539,7 +539,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 20px;
+        font-size: 27px;
+        color: $orange;
         background: $white;
       }
     }
@@ -563,8 +564,34 @@
         margin-bottom: 0;
       }
 
+      &.active a {
+        background: transparent;
+
+        &:before {
+          background: $orange;
+        }
+      }
+
       a {
-        @include size(2px, 34px);
+        @include size(20px, 25px);
+
+        position: relative;
+        display: block;
+        font-size: 0;
+        background: transparent;
+
+        @include media('>=tablet') {
+          height: 34px;
+        }
+
+        &:before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 2px;
+          height: 100%;
+          background: rgba($gray, .25);
+        }
       }
     }
   }
