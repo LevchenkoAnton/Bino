@@ -1396,7 +1396,8 @@ input[type='submit'] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .portfolio .portfolio-list li {
-    position: relative; }
+    position: relative;
+    width: 100%; }
     @media (min-width: 480px) {
       .portfolio .portfolio-list li {
         width: 50%;
