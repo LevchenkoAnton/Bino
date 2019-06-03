@@ -38,12 +38,12 @@ class Carousel {
         this.switchSlide();
         this.paginationEvent();
         this.attachEvents();
-        this.calculateHeight();
     }
 
     attachEvents() {
         let self = this;
 
+        window.addEventListener('load', self.onWindowResize.bind(self));
         window.addEventListener('resize', self.onWindowResize.bind(self));
         window.addEventListener('orientationchange', self.onWindowResize.bind(self));
 

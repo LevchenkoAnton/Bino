@@ -1,5 +1,5 @@
-import Modal from './src/javascript/modal';
-import Carousel from './src/javascript/carousel';
+// import Modal from './src/javascript/modal';
+// import Carousel from './src/javascript/carousel';
 
 // init header navigation
 const headerNav = new Modal('.header-nav',
