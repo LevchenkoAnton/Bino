@@ -353,7 +353,7 @@ td,
 th {
   padding: 0; }
 
-.header-nav, .carousel .slideset, .carousel .pagination ul, .feature-section .feature-list {
+.header-nav, .carousel .slideset, .carousel .pagination ul, .feature-section .feature-list, .portfolio .portfolio-nav, .portfolio .portfolio-list {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -422,7 +422,7 @@ h4, .h4 {
   font-size: 18px; }
 
 h5, .h5 {
-  font-size: 17px; }
+  font-size: 16px; }
 
 h6, .h6 {
   font-size: 15px; }
@@ -876,6 +876,18 @@ input[type='submit'] {
     display: inline-block;
     background: #6a6a6a; }
 
+.title-topline-decoration {
+  position: relative; }
+  .title-topline-decoration:before {
+    width: 44px;
+    height: 4px;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -27px;
+    display: inline-block;
+    background: #fff; }
+
 .title-left-line-decoration {
   display: inline-block;
   position: relative;
@@ -1313,4 +1325,119 @@ input[type='submit'] {
         width: 2px;
         height: 100%;
         background: rgba(153, 153, 153, 0.25); }
+
+.portfolio-section {
+  padding: 40px 0 0;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .portfolio-section {
+      padding-top: 80px; } }
+  @media (min-width: 1024px) {
+    .portfolio-section {
+      padding-top: 130px; } }
+  .portfolio-section h2 {
+    margin-bottom: 15px; }
+  .portfolio-section .title-decoration {
+    display: inline-block;
+    margin-bottom: 50px; }
+    @media (min-width: 768px) {
+      .portfolio-section .title-decoration {
+        margin-bottom: 98px; }
+        .portfolio-section .title-decoration span:before, .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
+          bottom: -33px; } }
+    .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
+      background-color: #999; }
+
+.portfolio .portfolio-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 25px;
+  font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 14px; }
+  @media (min-width: 768px) {
+    .portfolio .portfolio-nav {
+      margin-bottom: 48px; } }
+  .portfolio .portfolio-nav li {
+    position: relative;
+    padding: 0 20px; }
+    .portfolio .portfolio-nav li:after {
+      width: 1px;
+      height: 12px;
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      -webkit-transform: translate(0, -50%) rotate(20deg);
+          -ms-transform: translate(0, -50%) rotate(20deg);
+              transform: translate(0, -50%) rotate(20deg);
+      background: #999; }
+    .portfolio .portfolio-nav li:last-child:after {
+      display: none; }
+    .portfolio .portfolio-nav li a {
+      -webkit-transition: color 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out;
+      text-decoration: none; }
+      .portfolio .portfolio-nav li a:hover {
+        color: #f29f97; }
+
+.portfolio .portfolio-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .portfolio .portfolio-list li {
+    position: relative; }
+    @media (min-width: 480px) {
+      .portfolio .portfolio-list li {
+        width: 50%;
+        max-width: 480px; } }
+    @media (min-width: 1200px) {
+      .portfolio .portfolio-list li {
+        width: 25%; } }
+    .portfolio .portfolio-list li:hover .text-content {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 1; }
+  .portfolio .portfolio-list .text-content {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    padding: 35px;
+    color: #fff;
+    text-align: left;
+    background: rgba(231, 76, 60, 0.8); }
+    @media (min-width: 1200px) {
+      .portfolio .portfolio-list .text-content {
+        padding: 46px 50px; } }
+    .portfolio .portfolio-list .text-content h3 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff; }
 /*# sourceMappingURL=main.css.map */
