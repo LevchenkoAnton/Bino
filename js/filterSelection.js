@@ -5,7 +5,6 @@ class filterSelection {
         this.filterList = document.querySelector(options.filterList);
         this.filterItems = this.filterList.children;
         this.activeClass = options.activeClass || 'show';
-
         this.init();
     }
 
