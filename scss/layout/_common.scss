@@ -642,7 +642,7 @@
     margin-bottom: 50px;
 
     @include media('>=tablet') {
-      margin-bottom: 96px;
+      margin-bottom: 98px;
 
       span:before,
       &:before,
@@ -668,15 +668,22 @@
     margin-bottom: 25px;
     font-family: $font-open-sans;
     font-size: 14px;
-    line-height: 1.7;
 
     @include media('>=tablet') {
-      margin-bottom: 43px;
+      margin-bottom: 48px;
     }
 
     li {
       position: relative;
       padding: 0 20px;
+
+      &.active {
+        color: $orange;
+
+        a {
+          text-shadow: 0 1px $orange;
+        }
+      }
 
       @include media('>=tablet') {
         &:after {
@@ -697,13 +704,8 @@
         }
       }
 
-      &.active a {
-        color: $orange;
-        text-shadow: 0 1px $orange;
-      }
-
       a {
-        @include animate(color);
+        @include animate(color  text-shadow);
 
         text-decoration: none;
 
@@ -722,7 +724,13 @@
     flex-wrap: wrap;
 
     li {
+      display: none;
       position: relative;
+      width: 100%;
+
+      &.show {
+        display: block;
+      }
 
       @include media('>=phone') {
         width: 50%;

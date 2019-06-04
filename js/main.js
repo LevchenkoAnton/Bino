@@ -19,3 +19,8 @@ const servicesCarousel = new Carousel({
     generatePagination: true,
     vertical: true
 });
+
+const portfolioFilter = new filterSelection({
+    filterNav: '.portfolio-nav',
+    filterList: '.portfolio-list'
+});
