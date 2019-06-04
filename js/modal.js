@@ -41,6 +41,7 @@ class Modal {
         this.overlay.addEventListener('click', function (e) {
             e.preventDefault();
 
+            self.hideOverlay();
             self.hideModal();
         });
 
@@ -48,6 +49,7 @@ class Modal {
             this.closeBtn.addEventListener('click', function (e) {
                 e.preventDefault();
 
+                self.hideOverlay();
                 self.hideModal();
             });
         }
@@ -67,7 +69,7 @@ class Modal {
     }
 
     hideOverlay() {
-        this.overlay.remove();
+        this.overlay.parentElement.removeChild(this.overlay);
     }
 
     showModal() {
@@ -76,6 +78,5 @@ class Modal {
 
     hideModal() {
         this.wrapper.classList.remove(this.activeClass);
-        this.hideOverlay();
     }
 }
