@@ -1342,7 +1342,7 @@ input[type='submit'] {
     margin-bottom: 50px; }
     @media (min-width: 768px) {
       .portfolio-section .title-decoration {
-        margin-bottom: 98px; }
+        margin-bottom: 96px; }
         .portfolio-section .title-decoration span:before, .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
           bottom: -33px; } }
     .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
@@ -1359,26 +1359,31 @@ input[type='submit'] {
       flex-wrap: wrap;
   margin-bottom: 25px;
   font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 1.7; }
   @media (min-width: 768px) {
     .portfolio .portfolio-nav {
-      margin-bottom: 48px; } }
+      margin-bottom: 43px; } }
   .portfolio .portfolio-nav li {
     position: relative;
     padding: 0 20px; }
-    .portfolio .portfolio-nav li:after {
-      width: 1px;
-      height: 12px;
-      position: absolute;
-      content: '';
-      top: 50%;
-      right: 0;
-      -webkit-transform: translate(0, -50%) rotate(20deg);
-          -ms-transform: translate(0, -50%) rotate(20deg);
-              transform: translate(0, -50%) rotate(20deg);
-      background: #999; }
-    .portfolio .portfolio-nav li:last-child:after {
-      display: none; }
+    @media (min-width: 768px) {
+      .portfolio .portfolio-nav li:after {
+        width: 1px;
+        height: 12px;
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        -webkit-transform: translate(0, -50%) rotate(20deg);
+            -ms-transform: translate(0, -50%) rotate(20deg);
+                transform: translate(0, -50%) rotate(20deg);
+        background: #999; }
+      .portfolio .portfolio-nav li:last-child:after {
+        display: none; } }
+    .portfolio .portfolio-nav li.active a {
+      color: #e74c3c;
+      text-shadow: 0 1px #e74c3c; }
     .portfolio .portfolio-nav li a {
       -webkit-transition: color 0.3s ease-in-out;
       transition: color 0.3s ease-in-out;

@@ -642,7 +642,7 @@
     margin-bottom: 50px;
 
     @include media('>=tablet') {
-      margin-bottom: 98px;
+      margin-bottom: 96px;
 
       span:before,
       &:before,
@@ -668,30 +668,38 @@
     margin-bottom: 25px;
     font-family: $font-open-sans;
     font-size: 14px;
+    line-height: 1.7;
 
     @include media('>=tablet') {
-      margin-bottom: 48px;
+      margin-bottom: 43px;
     }
 
     li {
       position: relative;
       padding: 0 20px;
 
-      &:after {
-        @include size(1px, 12px);
+      @include media('>=tablet') {
+        &:after {
+          @include size(1px, 12px);
 
-        position: absolute;
-        content: '';
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%) rotate(20deg);
-        background: $gray;
+          position: absolute;
+          content: '';
+          top: 50%;
+          right: 0;
+          transform: translate(0, -50%) rotate(20deg);
+          background: $gray;
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
       }
 
-      &:last-child {
-        &:after {
-          display: none;
-        }
+      &.active a {
+        color: $orange;
+        text-shadow: 0 1px $orange;
       }
 
       a {
