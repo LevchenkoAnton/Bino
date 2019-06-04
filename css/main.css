@@ -1342,7 +1342,7 @@ input[type='submit'] {
     margin-bottom: 50px; }
     @media (min-width: 768px) {
       .portfolio-section .title-decoration {
-        margin-bottom: 98px; }
+        margin-bottom: 95px; }
         .portfolio-section .title-decoration span:before, .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
           bottom: -33px; } }
     .portfolio-section .title-decoration:before, .portfolio-section .title-decoration:after {
@@ -1362,26 +1362,32 @@ input[type='submit'] {
   font-size: 14px; }
   @media (min-width: 768px) {
     .portfolio .portfolio-nav {
-      margin-bottom: 48px; } }
+      margin-bottom: 44px; } }
   .portfolio .portfolio-nav li {
     position: relative;
     padding: 0 20px; }
-    .portfolio .portfolio-nav li:after {
-      width: 1px;
-      height: 12px;
-      position: absolute;
-      content: '';
-      top: 50%;
-      right: 0;
-      -webkit-transform: translate(0, -50%) rotate(20deg);
-          -ms-transform: translate(0, -50%) rotate(20deg);
-              transform: translate(0, -50%) rotate(20deg);
-      background: #999; }
-    .portfolio .portfolio-nav li:last-child:after {
-      display: none; }
+    .portfolio .portfolio-nav li.active {
+      color: #e74c3c; }
+      .portfolio .portfolio-nav li.active a {
+        text-shadow: 0 1px 0 #e74c3c; }
+    @media (min-width: 768px) {
+      .portfolio .portfolio-nav li:after {
+        width: 1px;
+        height: 12px;
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        -webkit-transform: translate(0, -50%) rotate(20deg);
+            -ms-transform: translate(0, -50%) rotate(20deg);
+                transform: translate(0, -50%) rotate(20deg);
+        background: #999; }
+      .portfolio .portfolio-nav li:last-child:after {
+        display: none; } }
     .portfolio .portfolio-nav li a {
-      -webkit-transition: color 0.3s ease-in-out;
-      transition: color 0.3s ease-in-out;
+      -webkit-transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+      line-height: 1.7;
       text-decoration: none; }
       .portfolio .portfolio-nav li a:hover {
         color: #f29f97; }
@@ -1396,8 +1402,11 @@ input[type='submit'] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .portfolio .portfolio-list li {
+    display: none;
     position: relative;
     width: 100%; }
+    .portfolio .portfolio-list li.show {
+      display: block; }
     @media (min-width: 480px) {
       .portfolio .portfolio-list li {
         width: 50%;
