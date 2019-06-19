@@ -1,6 +1,3 @@
-// import Modal from './src/javascript/modal';
-// import Carousel from './src/javascript/carousel';
-
 // init header navigation
 const headerNav = new Modal('.header-nav',
     {
@@ -18,6 +15,12 @@ const servicesCarousel = new Carousel({
     carouselClass: '.services-carousel',
     generatePagination: true,
     vertical: true
+});
+
+const caseCarousel = new Carousel({
+    carouselClass: '.case-carousel',
+    generatePagination: true,
+    autoRotation: false
 });
 
 const portfolioFilter = new filterSelection({
