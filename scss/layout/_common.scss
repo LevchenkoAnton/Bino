@@ -609,6 +609,8 @@
           position: absolute;
           content: '';
           display: block;
+          left: 50%;
+          transform: translate(0, -50%);
           width: 2px;
           height: 100%;
           background: rgba($gray, .25);
@@ -673,6 +675,7 @@
     li {
       position: relative;
       padding: 0 20px;
+      line-height: 1.7;
 
       &.active {
         color: $orange;
