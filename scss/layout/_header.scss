@@ -5,6 +5,10 @@
   background-size: cover;
   background-position: center center;
 
+  @include media('>=tablet') {
+    padding-top: 40px;
+  }
+
   &:before,
   &:after {
     position: absolute;
@@ -32,8 +36,33 @@
     background-image: linear-gradient(to left top, $white 0%, $white 50%, transparent 50%);
   }
 
-  @include media('>=tablet') {
-    padding-top: 40px;
+  .header-holder {
+
+    &:after {
+      @include size(64px);
+
+      position: absolute;
+      content: '\e900';
+      line-height: 1;
+      z-index: 2;
+      bottom: -26px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: block;
+      text-align: center;
+      font-family: 'icomoon' !important;
+      font-size: 30px;
+      line-height: 64px;
+      color: $orange;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      background: $light-gray;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba($white, .25);
+    }
   }
 
   .container {
