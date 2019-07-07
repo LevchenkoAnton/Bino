@@ -1473,15 +1473,15 @@ input[type='submit'] {
       color: #fff; }
 
 .case-section {
-  padding: 40px 0 0;
+  padding: 40px 0;
   text-align: center;
   background-color: #f4f5f9; }
   @media (min-width: 768px) {
     .case-section {
-      padding-top: 80px; } }
+      padding: 80px 0; } }
   @media (min-width: 1024px) {
     .case-section {
-      padding-top: 140px; } }
+      padding: 140px 0 150px; } }
   .case-section h2 {
     margin-bottom: 15px; }
   .case-section .heading {
@@ -1501,6 +1501,9 @@ input[type='submit'] {
       width: 50%; } }
 
 .case-carousel-holder {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   max-width: 585px;
   margin: 0 auto; }
   @media (min-width: 768px) {

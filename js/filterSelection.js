@@ -30,33 +30,21 @@ class filterSelection {
         [].forEach.call(this.filterItems, item => {
             if (name == 'all') return item.classList.add(this.activeClass);
 
-            if (item.classList.contains(name)) {
-                this.addClass(item, name);
+            let tags = item.dataset.tags;
+
+            if (tags.indexOf(name) != -1) {
+                item.classList.add(this.activeClass);
             } else {
-                this.removeClass(item, name);
+                item.classList.remove(this.activeClass);
             }
         });
     }
 
-    addClass(elem, className) {
-        let elemClassNames = elem.className.split(' ');
-
-        if (!(elemClassNames.indexOf(className) == -1)) {
-            elem.classList.add(this.activeClass);
-        }
-    }
-
-    removeClass(elem, className) {
-        let elemClassNames = elem.className.split(' ');
-
-        if (elemClassNames.indexOf(className) == -1) {
-            elem.classList.remove(this.activeClass);
-        }
-    }
-
     attachEvents() {
-        [].forEach.call(this.filteLinks, link => {
-            link.addEventListener('click', (e) => this.filter(e));
+        this.filterNav.addEventListener('click', (e) => {
+            if (e.target.tagName != 'A') return;
+
+            this.filter(e);
         });
     }
 }

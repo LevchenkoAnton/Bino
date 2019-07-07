@@ -783,16 +783,16 @@
 }
 
 .case-section {
-  padding: 40px 0 0;
+  padding: 40px 0;
   text-align: center;
   background-color: $light-gray;
 
   @include media('>=tablet') {
-    padding-top: 80px;
+    padding: 80px 0;
   }
 
   @include media('>=desktop') {
-    padding-top: 140px;
+    padding: 140px 0 150px;
   }
 
   h2 {
@@ -831,6 +831,7 @@
 }
 
 .case-carousel-holder {
+  flex: 1;
   max-width: 585px;
   margin: 0 auto;
 
