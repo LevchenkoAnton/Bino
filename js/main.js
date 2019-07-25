@@ -27,3 +27,9 @@ const portfolioFilter = new filterSelection({
     filterNav: '.portfolio-nav',
     filterList: '.portfolio-list'
 });
+
+let elem = document.querySelector('.logo');
+
+let elemStyle = getComputedStyle(elem);
+
+console.log(elemStyle.display);
