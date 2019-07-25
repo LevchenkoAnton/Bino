@@ -387,6 +387,14 @@
     padding: 137px 0 147px;
   }
 
+  .about-content {
+    text-align: center;
+
+    @include media('>=tablet') {
+      text-align: left;
+    }
+  }
+
   .about-holder {
     @include media('>=tablet') {
       display: flex;

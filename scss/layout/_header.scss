@@ -109,11 +109,13 @@
   }
 
   .btn-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     @include media('>=tablet') {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
     }
 
     .btn {
